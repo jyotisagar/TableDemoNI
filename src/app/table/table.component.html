@@ -22,10 +22,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of tableData">   
+    <tr *ngFor="let data of tableData">    
       <td><input type="checkbox" name="table" value="chk1"></td>  
-      <td>{{data[0]['value']}}</td>            
-      <td>{{data[1]['value']}}</td>            
+      <td>{{data[0].value}}</td>
+      <td>{{data[1].value}}</td>
+      <td>{{data[2].value}}</td>
+      <td>{{data[3].value}}</td>             
     </tr>
   </tbody>
 </table>
