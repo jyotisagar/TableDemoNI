@@ -1,0 +1,30 @@
+<p> Welcome to Table Component </p>
+<!-- <table>
+    <thead>
+      <tr>
+        <th *ngFor="let data of tableData; let i = index">{{data.key}} </th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of tableData | orderby:'column1'">     
+        <td *ngFor="let col of tableData">
+          {{data[col]['value']}}
+        </td>                               
+      </tr>
+    </tbody> 
+  </table>-->
+
+<table>
+  <thead>
+    <tr>
+      <th *ngFor='let col of tableColumn'>{{col}}</th>  
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of tableData">   
+      <td><input type="checkbox" name="table" value="chk1"></td>  
+      <td>{{data[0]['value']}}</td>            
+      <td>{{data[1]['value']}}</td>            
+    </tr>
+  </tbody>
+</table>

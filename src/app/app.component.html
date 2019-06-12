@@ -1,6 +1,19 @@
-<div id='container'>
-  <app-sidebar></app-sidebar>
-  <div id = 'content'>
-    <router-outlet></router-outlet>
-  </div>
+<hr>
+<app-table></app-table>
+<hr>
+<span> 
+  <button (click)='getName("RENAME")'>RENAME</button><br><br>
+  <button (click)='getName("DELETE")'>DELETE</button>
+</span>
+
+<div *ngIf="action_ren" (clickOutside)="resetdiv()"> 
+  <h5>This is RENAME div</h5>
+      The action clicked is: <span> {{action}} </span><br><br>
+      <input type="text" (change)="edit($event.target.value)" value={{action}} [(ngModel)]="name" >
 </div>
+
+<!-- <div *ngIf="action_del"> 
+  <h5>This is DELETE div</h5>
+      The action clicked is: <span> {{action}} </span><br><br>
+      <input type="text" (change)="edit($event.target.value)" value={{action}}/>
+</div> -->
