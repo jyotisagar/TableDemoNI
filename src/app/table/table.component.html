@@ -1,33 +1,20 @@
 <p> Welcome to Table Component </p>
-<!-- <table>
-    <thead>
-      <tr>
-        <th *ngFor="let data of tableData; let i = index">{{data.key}} </th>        
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let data of tableData | orderby:'column1'">     
-        <td *ngFor="let col of tableData">
-          {{data[col]['value']}}
-        </td>                               
-      </tr>
-    </tbody> 
-  </table>-->
-
-<table>
+<button (click)="getTableRecords(3)">TableRecords3</button>&nbsp;&nbsp;
+<button (click)="getTableRecords(4)">TableRecords4</button>&nbsp;&nbsp;
+<button (click)="getTableRecords(5)">TableRecords5</button>&nbsp;&nbsp;
+<button (click)="getTableRecords(6)">TableRecords6</button>&nbsp;&nbsp;
+<br/><br/><br/>
+<table >
   <thead>
     <tr>
       <th></th>
-      <th *ngFor='let col of tableColumn'>{{col}}</th>  
+      <th *ngFor='let col of tableColumn'>{{col}}</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let data of tableData">    
-      <td><input type="checkbox" name="table" value="chk1"></td>  
-      <td>{{data[0].value}}</td>
-      <td>{{data[1].value}}</td>
-      <td>{{data[2].value}}</td>
-      <td>{{data[3].value}}</td>             
+    <tr *ngFor="let row of tableData; let i = index">
+      <td><input type="checkbox"></td>
+      <td *ngFor="let objValue of _object.keys(row); ">{{ row[objValue].value }} </td>
     </tr>
   </tbody>
 </table>

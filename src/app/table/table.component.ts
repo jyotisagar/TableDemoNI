@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableComponent implements OnInit {
   tableColumn = [];
+  tableRow = []
   tableData=[
    [    
     {key:'First Name',value:'Jyoti'},
@@ -27,16 +28,16 @@ export class TableComponent implements OnInit {
     {key:'Mobile',value:'789'}
    ]
   ]
+  _object = Object;
   constructor() { }
 
-  ngOnInit() {
-   
-    for (var i = 0; i < 1; i++) {     
-      for(var j in this.tableData[0]){
-        if (this.tableColumn.indexOf(j) === -1) {
-          this.tableColumn.push(this.tableData[i][j].key)
-        }  
-      }
+  ngOnInit() {   
+    for(var i in this.tableData[0]){   
+        this.tableColumn.push(this.tableData[0][i].key)
     }
+  }
+  getTableRecords(tableRec: string){
+    console.log(tableRec)
+
   }
 }
