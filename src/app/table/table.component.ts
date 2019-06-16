@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TableDataService } from '../table-data.service';
 
 @Component({
   selector: 'app-table',
@@ -6,38 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  tableColumn = [];
-  tableRow = []
-  tableData=[
-   [    
-    {key:'First Name',value:'Jyoti'},
-    {key:'Last Name',value:'Sagar'},
-    {key:'Address',value:'PS'},
-    {key:'Mobile',value:'123'}
-   ],
-   [    
-    {key:'First Name',value:'Gaurav'},
-    {key:'Last Name',value:'Gupta'},
-    {key:'Address',value:'Hj'},
-    {key:'Mobile',value:'456'}
-   ],
-   [    
-    {key:'First Name',value:'Manish'},
-    {key:'Last Name',value:'Kumar'},
-    {key:'Address',value:'Rt'},
-    {key:'Mobile',value:'789'}
-   ]
-  ]
+  tableRowCol = []
+  tableColumn = [];  
+  tableData=[]
   _object = Object;
-  constructor() { }
+  constructor(private tabledataservice: TableDataService) { }
 
-  ngOnInit() {   
-    for(var i in this.tableData[0]){   
-        this.tableColumn.push(this.tableData[0][i].key)
-    }
+  ngOnInit() {    
+    this.tableColumn = [];  
+    this.tableData=[];
   }
-  getTableRecords(tableRec: string){
-    console.log(tableRec)
+
+  getTableRecords(tableRec: number){   
+    
+    this.tableRowCol = this.tabledataservice.getTableData(tableRec);
+    this.tableColumn = this.tableRowCol[0];  
+    this.tableData = this.tableRowCol[1];  
 
   }
 }

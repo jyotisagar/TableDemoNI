@@ -1,10 +1,10 @@
 <p> Welcome to Table Component </p>
-<button (click)="getTableRecords(3)">TableRecords3</button>&nbsp;&nbsp;
 <button (click)="getTableRecords(4)">TableRecords4</button>&nbsp;&nbsp;
 <button (click)="getTableRecords(5)">TableRecords5</button>&nbsp;&nbsp;
 <button (click)="getTableRecords(6)">TableRecords6</button>&nbsp;&nbsp;
+<button (click)="getTableRecords(7)">TableRecords7</button>&nbsp;&nbsp;
 <br/><br/><br/>
-<table >
+<table id='dynamicTab'>
   <thead>
     <tr>
       <th></th>
@@ -14,7 +14,7 @@
   <tbody>
     <tr *ngFor="let row of tableData; let i = index">
       <td><input type="checkbox"></td>
-      <td *ngFor="let objValue of _object.keys(row); ">{{ row[objValue].value }} </td>
+      <td *ngFor="let objValue of _object.keys(row); ">{{row[objValue].value }} </td>
     </tr>
   </tbody>
 </table>

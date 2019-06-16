@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { TilerenameDirective } from './tilerename.directive';
 import { FormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
+import { TableDataService } from './table-data.service';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,7 @@ import { TableComponent } from './table/table.component';
   imports: [
     BrowserModule,FormsModule
   ],
-  providers: [],
+  providers: [TableDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
